@@ -1,5 +1,7 @@
 package com.archit.eventmanagementapi.entities;
 
+import org.springframework.data.rest.core.annotation.RestResource;
+
 import javax.persistence.*;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
@@ -28,6 +30,9 @@ public class Event extends AbstractEntity {
     private Set<Participant> participants;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    // to embed venue within in event json
+    // it will create venue in database
+    @RestResource(exported = false)
     private Venue venue;
 
     public String getName() {
