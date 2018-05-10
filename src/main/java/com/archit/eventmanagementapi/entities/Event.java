@@ -17,11 +17,13 @@ public class Event extends AbstractEntity {
     private boolean started;
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @Column(nullable = false)
+    @JoinColumn(nullable = false)
     private Organizer organizer;
 
-    @OneToMany(mappedBy = "event", fetch = FetchType.EAGER, cascade =
-            CascadeType.ALL,
+    @OneToMany(
+            mappedBy = "event",
+            fetch = FetchType.EAGER,
+            cascade = CascadeType.ALL,
             orphanRemoval = true)
     private Set<Participant> participants;
 
