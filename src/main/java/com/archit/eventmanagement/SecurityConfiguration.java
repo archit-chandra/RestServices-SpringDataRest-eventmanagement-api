@@ -26,6 +26,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 // 3 types of antMatchers methods
                 .antMatchers(HttpMethod.POST, "/events").hasRole("ADMIN")
                 .antMatchers(HttpMethod.PUT, "/events/**").hasRole("ADMIN")
-                .antMatchers(HttpMethod.PATCH, "/events/**").hasRole("ADMIN");
+                .antMatchers(HttpMethod.PATCH, "/events/**").hasRole("ADMIN")
+                .and().csrf().disable();
     }
 }
