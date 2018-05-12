@@ -14,9 +14,9 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
         // has many other authentication types
         auth.inMemoryAuthentication()
-                .withUser("bharath").password("bharath").roles("USER")
+                .withUser("bharath").password("{noop}bharath").roles("USER")
                 .and()
-                .withUser("admin").password("admin").roles("ADMIN");
+                .withUser("admin").password("{noop}admin").roles("ADMIN");
     }
 
     // configures authorization
