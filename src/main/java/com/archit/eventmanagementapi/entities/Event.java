@@ -1,5 +1,6 @@
 package com.archit.eventmanagementapi.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.springframework.data.rest.core.annotation.RestResource;
 
@@ -16,6 +17,7 @@ import java.util.Set;
 public class Event extends AbstractEntity {
 
     private String name;
+    @JsonProperty("details") // but it will put this field last in json
     private String description;
     private ZonedDateTime startTime;
     private ZonedDateTime endTime;
