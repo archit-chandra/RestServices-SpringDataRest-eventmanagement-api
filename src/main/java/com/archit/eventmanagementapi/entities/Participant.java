@@ -16,6 +16,10 @@ public class Participant extends AbstractEntity {
     @JoinColumn(referencedColumnName = "ID", nullable = false, updatable = false)
     private Event event;
 
+    public Long getResourceId() {
+        return this.id;
+    }
+
     public String getName() {
         return name;
     }

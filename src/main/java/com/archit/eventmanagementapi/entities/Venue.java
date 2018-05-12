@@ -14,6 +14,10 @@ public class Venue extends AbstractEntity {
     private String country;
     private String postalCode;
 
+    public Long getResourceId() {
+        return this.id;
+    }
+
     public String getName() {
         return name;
     }
