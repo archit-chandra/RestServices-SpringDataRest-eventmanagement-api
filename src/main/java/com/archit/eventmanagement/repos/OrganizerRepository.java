@@ -1,6 +1,6 @@
-package com.archit.eventmanagementapi.repos;
+package com.archit.eventmanagement.repos;
 
-import com.archit.eventmanagementapi.entities.Organizer;
+import com.archit.eventmanagement.entities.Organizer;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface OrganizerRepository extends PagingAndSortingRepository<Organizer, Long> {

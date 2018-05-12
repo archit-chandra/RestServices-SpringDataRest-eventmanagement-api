@@ -1,4 +1,4 @@
-package com.archit.eventmanagementapi.entities;
+package com.archit.eventmanagement.entities;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
