@@ -8,6 +8,9 @@ import org.springframework.data.repository.query.Param;
 
 import java.time.ZoneId;
 
+// Add below annotation only when using excerpts
+// used when collection of events through finder methods to use this projection
+//@RepositoryRestResource(excerptProjection = PartialEventProjection.class)
 public interface EventRepository extends PagingAndSortingRepository<Event, Long> {
 
     /**
