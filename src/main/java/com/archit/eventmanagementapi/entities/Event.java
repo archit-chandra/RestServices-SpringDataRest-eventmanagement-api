@@ -1,5 +1,7 @@
 package com.archit.eventmanagementapi.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 import org.springframework.data.rest.core.annotation.RestResource;
 
 import javax.persistence.*;
@@ -8,10 +10,14 @@ import java.time.ZonedDateTime;
 import java.util.Objects;
 import java.util.Set;
 
+// Tells Jackson converter to put "resourceId" at first
+// for others natural ordering as defined will be used
+@JsonPropertyOrder("resourceId")
 @Entity
 public class Event extends AbstractEntity {
 
     private String name;
+    @JsonProperty("details") // but it will put this field last in json
     private String description;
     private ZonedDateTime startTime;
     private ZonedDateTime endTime;
