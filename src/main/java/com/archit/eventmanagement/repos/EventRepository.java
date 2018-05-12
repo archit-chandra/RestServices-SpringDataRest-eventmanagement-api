@@ -1,6 +1,6 @@
-package com.archit.eventmanagementapi.repos;
+package com.archit.eventmanagement.repos;
 
-import com.archit.eventmanagementapi.entities.Event;
+import com.archit.eventmanagement.entities.Event;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
