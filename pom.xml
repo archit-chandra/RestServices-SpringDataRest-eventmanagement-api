@@ -56,6 +56,13 @@
             <artifactId>jackson-datatype-jsr310</artifactId>
             <version>2.9.5</version>
         </dependency>
+
+        <!--support for HAL browser-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-rest-hal-browser</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
