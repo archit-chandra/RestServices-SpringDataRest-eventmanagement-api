@@ -6,6 +6,10 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.time.Instant;
 
+// NOTES: @MappedSuperclass
+//  1. It lets hibernate know to not create table for this class
+//  2. This is the super class of real entities
+//  3. Usually, this class holds generic field like ID
 @MappedSuperclass
 public class AbstractEntity {
 
@@ -16,6 +20,9 @@ public class AbstractEntity {
 
     @JsonIgnore
     @CreationTimestamp
+    // NOTES: @Column(updatable = false), @Column(insertable = false)
+    //  1. Once created its instance, this property can not be updated in DB
+    //  2. Similarly, @Column(insertable = false)
     @Column(updatable = false)
     protected Instant created;
 
