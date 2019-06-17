@@ -10,14 +10,18 @@ import java.time.ZonedDateTime;
 import java.util.Objects;
 import java.util.Set;
 
-// Tells Jackson converter to put "resourceId" at first
-// for others natural ordering as defined will be used
+// NOTES: @JsonPropertyOrder
+//  1. Tells Jackson converter to put "resourceId" at first
+//  2. for others natural ordering as defined will be used
 @JsonPropertyOrder("resourceId")
 @Entity
 public class Event extends AbstractEntity {
 
     private String name;
-    @JsonProperty("details") // but it will put this field last in json
+    // NOTES: @JsonProperty
+    //  1. Jackson converter will map 'description' property with 'details' json field
+    //  2. But, it will put this field last in json
+    @JsonProperty("details")
     private String description;
     private ZonedDateTime startTime;
     private ZonedDateTime endTime;
@@ -36,8 +40,10 @@ public class Event extends AbstractEntity {
     private Set<Participant> participants;
 
     @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    // to embed venue within in event json
-    // it will create venue in database
+
+    // NOTES: @RestResource
+    //  1. To embed 'venue' within in 'event' json
+    //  2. It will create 'venue' table in database
     @RestResource(exported = false)
     private Venue venue;
 
